@@ -1,9 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-        <ul>
-            <li>{{$repo->nome}}</li>
-            <li>{{$repo->eta}}</li>
-            <li>{{$repo->description}}</li>
-        </ul>
+    <section>
+    <!--for demo wrap-->
+        <h1>{{$repo->nome}}</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Età</th>
+                        <th>Descrizione</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <th>{{$repo->nome}}</th>
+                        <th>{{$repo->eta}}</th>
+                        <th>{{$repo->description}}</th>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 @endsection
