@@ -28,7 +28,7 @@
         @if (!empty($repo))
             <input type="hidden" name="id" value="{{$repo->id}}">
         @endif
-            <h1>Fixed Table header</h1>
+            <h1>{{(!empty($repo)) ? 'EDIT' : 'CREATE'}}</h1>
 
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
