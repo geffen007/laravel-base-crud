@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// 
+//
 // Route::get('/', function () {
 //     return view('index');
 // });
+
+Route::get('/', 'Repo15Controller@index')->name('repos.index');
 
 Route::resource('repos', 'Repo15Controller');

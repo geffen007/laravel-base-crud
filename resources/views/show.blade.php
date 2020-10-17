@@ -11,6 +11,7 @@
                         <th>Nome</th>
                         <th>Età</th>
                         <th>Descrizione</th>
+                        <th></th>
                     </tr>
                 </thead>
             </table>
@@ -22,7 +23,13 @@
                         <th>{{$repo->nome}}</th>
                         <th>{{$repo->eta}}</th>
                         <th>{{$repo->description}}</th>
-
+                        <th>
+                            <form action="{{route('repos.edit', $repo->id)}}" method="post">
+                                @csrf
+                                @method('GET')
+                                <input type="submit" value="MODIFICA">
+                            </form>
+                        </th>
                     </tr>
                 </tbody>
             </table>

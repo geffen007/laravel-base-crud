@@ -8,13 +8,13 @@
 <!--for demo wrap-->
     <h1>CRUD</h1>
     <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table class="container" cellpadding="0" cellspacing="0" border="0">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Età</th>
                     <th>Descrizione</th>
-                    <th>Change</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>
@@ -39,6 +39,13 @@
             </tbody>
         </table>
     </div>
+
+    <form action="{{route('repos.create')}}" method="post">
+        @csrf
+        @method('GET')
+        <input type="submit" value="CREA">
+    </form>
 </section>
+
 
 @endsection
