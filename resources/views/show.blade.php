@@ -6,6 +6,4 @@
             <li>{{$repo->eta}}</li>
             <li>{{$repo->description}}</li>
         </ul>
-
-
 @endsection
