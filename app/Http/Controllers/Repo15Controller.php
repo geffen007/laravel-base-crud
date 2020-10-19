@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repos;
+use App\Repo;
 
 class Repo15Controller extends Controller
 {
@@ -14,7 +14,7 @@ class Repo15Controller extends Controller
      */
     public function index()
     {
-        $data = Repos::all();
+        $data = Repo::all();
         return view('index', compact('data'));
     }
 
@@ -46,7 +46,7 @@ class Repo15Controller extends Controller
         // if(empty($data['nome'])||empty($data['eta'])){
         //     return back()->withInput();
         // }
-        $repoNew = new Repos;
+        $repoNew = new Repo;
         // $repoNew->nome = $data['nome'];
         // $repoNew->eta = $data['eta'];
         // $repoNew->description = $data['description'];
@@ -71,7 +71,7 @@ class Repo15Controller extends Controller
     //     return view('show', compact('repo'));
     // }
 
-    public function show(Repos $repo)
+    public function show(Repo $repo)
     {
         return view('show', compact('repo'));
     }
@@ -82,7 +82,7 @@ class Repo15Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Repos $repo)
+    public function edit(Repo $repo)
     {
         return view('create', compact('repo'));
     }
@@ -94,7 +94,7 @@ class Repo15Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Repos $repo)
+    public function update(Request $request, Repo $repo)
     {
         $data = $request->all();
         $repo->update($data);
@@ -108,9 +108,9 @@ class Repo15Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Repos $repo)
+    public function destroy(Repo $repo)
     {
         $repo->delete();
-        return redirect()->route('repos.index');    
+        return redirect()->route('repos.index');
     }
 }
